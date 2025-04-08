@@ -1,6 +1,6 @@
 
 const startDate = new Date().getTime(); 
-const endDate = new Date("2025-04-08 22:31:00").getTime();
+const endDate = new Date("2025-04-03 22:31:00").getTime();
 
 
 
@@ -34,10 +34,10 @@ let x = setInterval(function updateTime() {
         const persentageDistance = (distanceCovered / totalTime) *100;
         
         document.querySelector(".progress-line").style.width = persentageDistance + "%"
-        if(totalTime < 0 ){
+        if(pendingTime < 0 ){
             
-            clearInterval;
-            document.getElementById("timing").innerHTML = "expired";
+            clearInterval(x);
+            document.getElementById("timer").innerHTML = "expired";
 
             document.querySelector(".progress-line").style.width = "100%";
             
